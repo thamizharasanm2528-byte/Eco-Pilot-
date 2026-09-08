@@ -1,0 +1,254 @@
+[
+  {
+    "id": "energy-001",
+    "title": "Energy Efficiency Guidelines for Educational Institutions",
+    "category": "energy",
+    "topic": "energy_efficiency",
+    "content": "Educational institutions consume significant quantities of electrical energy for HVAC systems, campus lighting, laboratory equipment, and computing facilities. Implementing automated building management systems (BMS), smart LED retrofits with motion sensors, and temperature setpoint optimizations (maintaining 24°C in summer) can reduce total campus building electricity usage by 15% to 25%. Solar photovoltaic rooftop integration further offsets grid dependence during peak daytime operating hours.",
+    "source": {
+      "name": "International Energy Agency (IEA)",
+      "url": "https://www.iea.org/topics/energy-efficiency",
+      "publicationDate": "2024-01-15",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["energy", "efficiency", "campus", "hvac", "solar"]
+  },
+  {
+    "id": "energy-002",
+    "title": "Campus Renewable Energy Integration and Microgrids",
+    "category": "energy",
+    "topic": "renewable_energy",
+    "content": "Transitioning educational campuses toward 100% renewable energy involves installing rooftop solar PV arrays, micro-wind turbines, and battery energy storage systems (BESS). Distributed campus microgrids allow academic facilities to island during grid instability, store excess solar generation during midday periods, and lower peak demand charges by up to 30%. Energy auditing and power factor correction capacitors further improve overall power quality.",
+    "source": {
+      "name": "U.S. Department of Energy (DOE)",
+      "url": "https://www.energy.gov/eere/renewable-energy",
+      "publicationDate": "2023-11-10",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["energy", "renewable", "solar", "microgrid", "bess"]
+  },
+  {
+    "id": "energy-003",
+    "title": "Smart Campus Lighting and Submetering Protocols",
+    "category": "energy",
+    "topic": "energy_efficiency",
+    "content": "Comprehensive submetering across individual academic blocks, student hostels, and dining halls provides granular visibility into energy consumption hotspots. Installing smart IoT electricity meters coupled with daylight harvesting sensors ensures artificial lighting adjusts dynamically according to natural sunlight. Automated scheduling of corridor lighting and laboratory fume hoods prevents phantom energy draw outside operational hours.",
+    "source": {
+      "name": "U.S. Environmental Protection Agency (EPA)",
+      "url": "https://www.epa.gov/energy/energy-resources-state-and-local-governments",
+      "publicationDate": "2024-03-01",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["energy", "submetering", "lighting", "iot", "smart_sensors"]
+  },
+  {
+    "id": "water-001",
+    "title": "Campus Water Conservation and Greywater Recycling",
+    "category": "water",
+    "topic": "water_conservation",
+    "content": "Higher education institutions generate substantial volumes of greywater from dormitory showers, handwashing basins, and laundry facilities. Implementing decentralized greywater treatment systems using constructed wetlands or membrane bioreactors allows treated wastewater to be reused for landscape irrigation and toilet flushing. Installing low-flow aerators (1.5 GPM) and dual-flush toilets reduces municipal water withdrawal by 35% to 50%.",
+    "source": {
+      "name": "United Nations Environment Programme (UNEP)",
+      "url": "https://www.unep.org/explore-topics/water",
+      "publicationDate": "2023-09-20",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["water", "greywater", "recycling", "conservation", "aerators"]
+  },
+  {
+    "id": "water-002",
+    "title": "Rainwater Harvesting and Groundwater Recharge in Institutions",
+    "category": "water",
+    "topic": "water_conservation",
+    "content": "Rooftop rainwater harvesting systems capture monsoon precipitation from campus building roofs, channeling water through silt filters into underground storage sumps or recharge shafts. Recharging local aquifers raises the water table and decreases dependency on external water tankers. Regular water quality testing and backwashing of filtration media ensure harvested rainwater meets non-potable operational standards.",
+    "source": {
+      "name": "Ministry of Environment, Forest and Climate Change (India)",
+      "url": "https://moef.gov.in/",
+      "publicationDate": "2023-08-12",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["water", "rainwater_harvesting", "recharge", "aquifer"]
+  },
+  {
+    "id": "water-003",
+    "title": "Institutional Water Auditing and Leak Detection",
+    "category": "water",
+    "topic": "water_conservation",
+    "content": "Systematic water auditing involves establishing baseline consumption metrics across administrative, residential, and green spaces. Acoustic leak detectors and pressure management valves identify underground pipe fractures before major losses occur. Establishing real-time continuous flow monitoring catches running toilets and commercial kitchen rinse hose leaks immediately.",
+    "source": {
+      "name": "World Health Organization (WHO)",
+      "url": "https://www.who.int/health-topics/water-sanitation-and-hygiene-wash",
+      "publicationDate": "2024-02-18",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["water", "audit", "leak_detection", "sanitation"]
+  },
+  {
+    "id": "waste-001",
+    "title": "Zero Waste Campus Strategies and Source Segregation",
+    "category": "waste",
+    "topic": "waste_reduction",
+    "content": "Achieving a Zero Waste campus requires source segregation into color-coded bins: Organic (Green), Recyclables (Blue), Hazardous (Red), and Landfill (Black). Eliminating single-use plastics in campus cafeterias, introducing reusable food container deposit schemes, and conducting periodic waste stream audits divert up to 80% of institutional waste away from municipal landfills.",
+    "source": {
+      "name": "U.S. Environmental Protection Agency (EPA)",
+      "url": "https://www.epa.gov/transforming-waste",
+      "publicationDate": "2023-12-05",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["waste", "zero_waste", "segregation", "recycling", "plastics"]
+  },
+  {
+    "id": "waste-002",
+    "title": "On-Site Organic Waste Composting and Bio-Digesters",
+    "category": "waste",
+    "topic": "composting",
+    "content": "Organic food scraps and yard trimmings account for nearly 40% of institutional waste streams. Operating aerobic in-vessel composters or anaerobic bio-digesters converts food waste into nutrient-rich soil conditioner and biogas. Biogas generated from dining hall waste can be piped directly back into kitchens to offset LPG consumption.",
+    "source": {
+      "name": "United Nations (UN Sustainable Development Goals)",
+      "url": "https://sdgs.un.org/goals/goal12",
+      "publicationDate": "2024-01-30",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["waste", "composting", "biodigester", "organic", "biogas"]
+  },
+  {
+    "id": "waste-003",
+    "title": "Electronic Waste (E-Waste) Recycling Protocols",
+    "category": "waste",
+    "topic": "recycling",
+    "content": "Educational campuses generate significant electronic waste from obsolete computer labs, server hardware, monitors, and batteries. Establishing certified e-waste collection drives, partnering with authorized recyclers, and implementing equipment refurbishment programs prevent toxic heavy metals (lead, mercury, cadmium) from leaching into soil and groundwater ecosystems.",
+    "source": {
+      "name": "United Nations Industrial Development Organization (UNIDO)",
+      "url": "https://www.unido.org/our-focus/cross-cutting-services/green-industry/e-waste",
+      "publicationDate": "2023-10-14",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["waste", "ewaste", "recycling", "hardware", "hazardous"]
+  },
+  {
+    "id": "transportation-001",
+    "title": "Sustainable Campus Mobility and Active Transport Infrastructure",
+    "category": "transportation",
+    "topic": "sustainable_transportation",
+    "content": "Decarbonizing campus commuter emissions requires prioritizing active mobility infrastructure: dedicated bike lanes, covered pedestrian walkways, secure bicycle parking racks, and public bicycle sharing stations. Restricting private motor vehicle access to campus perimeters creates pedestrianized central plazas, reducing local tailpipe carbon emissions and noise pollution.",
+    "source": {
+      "name": "United Nations Human Settlements Programme (UN-Habitat)",
+      "url": "https://unhabitat.org/topic/urban-mobility",
+      "publicationDate": "2024-02-10",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["transportation", "active_mobility", "pedestrian", "cycling", "emissions"]
+  },
+  {
+    "id": "transportation-002",
+    "title": "Campus Electric Shuttle Fleets and EV Charging Hubs",
+    "category": "transportation",
+    "topic": "sustainable_transportation",
+    "content": "Replacing fossil-fuel campus shuttles with battery-electric buses (EVs) powered by solar charging stations significantly reduces Scope 1 commuter emissions. Installing Level 2 and DC Fast Charging stations in staff and student parking lots incentivizes electric vehicle adoption across the broader campus community.",
+    "source": {
+      "name": "International Transport Forum (ITF)",
+      "url": "https://www.itf-oecd.org/",
+      "publicationDate": "2023-11-28",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["transportation", "ev", "electric_shuttle", "charging_station"]
+  },
+  {
+    "id": "transportation-003",
+    "title": "Institutional Carpooling and Mass Transit Subsidies",
+    "category": "transportation",
+    "topic": "sustainable_transportation",
+    "content": "Promoting institutional ridesharing applications connects commuters traveling along identical campus routes. Offering discounted public transit passes, priority carpool parking spots, and guaranteed ride-home programs reduces single-occupancy vehicle trips by 20% to 35%.",
+    "source": {
+      "name": "U.S. Federal Transit Administration (FTA)",
+      "url": "https://www.transit.dot.gov/",
+      "publicationDate": "2024-01-05",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["transportation", "carpool", "public_transit", "rideshare"]
+  },
+  {
+    "id": "food-001",
+    "title": "Sustainable Campus Food Sourcing and Plant-Forward Menus",
+    "category": "food",
+    "topic": "sustainable_food",
+    "content": "Campus dining services impact land use, greenhouse gas emissions, and water footprints. Introducing plant-forward menus, sourcing organic produce from local farm cooperatives within a 100-mile radius, and shifting toward seasonal ingredients lowers food transportation footprint while improving student nutritional health.",
+    "source": {
+      "name": "Food and Agriculture Organization (FAO)",
+      "url": "https://www.fao.org/sustainable-food-value-chains/en/",
+      "publicationDate": "2023-12-18",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["food", "sustainable_sourcing", "plant_forward", "local_farms"]
+  },
+  {
+    "id": "food-002",
+    "title": "Dining Hall Food Waste Reduction and Meal Rescue Programs",
+    "category": "food",
+    "topic": "sustainable_food",
+    "content": "Institutional dining facilities minimize food waste by shifting from tray service to trayless dining, cooking in smaller batch sizes, and tracking plate waste. Surplus untouched prepared food can be safely donated to local community food banks and student food pantries via food rescue protocols.",
+    "source": {
+      "name": "World Resources Institute (WRI)",
+      "url": "https://www.wri.org/initiatives/food-loss-waste",
+      "publicationDate": "2024-02-22",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["food", "waste_reduction", "food_rescue", "dining_hall"]
+  },
+  {
+    "id": "food-003",
+    "title": "Campus Community Gardens and Urban Agriculture",
+    "category": "food",
+    "topic": "sustainable_food",
+    "content": "Establishing student-managed organic gardens, rooftop hydroponic greenhouses, and permaculture food forests provides hands-on sustainability education while producing fresh herbs and vegetables for campus dining. Vertical hydroponic farms require 90% less water than traditional soil agriculture.",
+    "source": {
+      "name": "U.S. Department of Agriculture (USDA)",
+      "url": "https://www.usda.gov/topics/sustainable-development",
+      "publicationDate": "2023-10-09",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["food", "urban_agriculture", "hydroponics", "community_garden"]
+  },
+  {
+    "id": "climate-001",
+    "title": "Campus Net-Zero Climate Action Plans and Carbon Accounting",
+    "category": "climate",
+    "topic": "carbon_emissions",
+    "content": "Developing a comprehensive Campus Climate Action Plan requires conducting annual Greenhouse Gas (GHG) inventories across Scope 1 (direct fuel/gas combustion), Scope 2 (purchased electricity), and Scope 3 (commuter travel, procurement, waste disposal). Setting science-based targets aimed at net-zero emissions by 2040 drives capital investments toward renewable energy, thermal energy storage, and forest offsets.",
+    "source": {
+      "name": "Intergovernmental Panel on Climate Change (IPCC)",
+      "url": "https://www.ipcc.ch/",
+      "publicationDate": "2023-03-20",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["climate", "net_zero", "carbon_emissions", "ghg_inventory", "scope123"]
+  },
+  {
+    "id": "climate-002",
+    "title": "Green Building Standards and LEED Certification for Campuses",
+    "category": "climate",
+    "topic": "green_buildings",
+    "content": "Constructing new university academic facilities to LEED Gold or Platinum standards ensures buildings feature high-performance envelopes, green vegetative roofs, natural ventilation, and non-toxic interior finishes. Retro-commissioning existing campus infrastructure optimizes energy performance and indoor air quality.",
+    "source": {
+      "name": "U.S. Green Building Council (USGBC)",
+      "url": "https://www.usgbc.org/leed",
+      "publicationDate": "2023-09-15",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["climate", "green_buildings", "leed", "architecture", "energy_star"]
+  },
+  {
+    "id": "climate-003",
+    "title": "Campus Urban Canopy and Biodiversity Conservation",
+    "category": "climate",
+    "topic": "biodiversity",
+    "content": "Preserving mature campus tree canopies mitigates urban heat island effects, lowers building cooling loads, and fosters native bird and pollinator biodiversity. Planting native flora species, installing bio-swales for natural stormwater filtration, and creating designated wildlife corridors enhance ecosystem resilience.",
+    "source": {
+      "name": "International Union for Conservation of Nature (IUCN)",
+      "url": "https://www.iucn.org/",
+      "publicationDate": "2023-07-11",
+      "accessedDate": "2026-08-08"
+    },
+    "tags": ["climate", "biodiversity", "canopy", "stormwater", "pollinators"]
+  }
+]

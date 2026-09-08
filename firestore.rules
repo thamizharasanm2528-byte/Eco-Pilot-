@@ -1,0 +1,93 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // =========================
+    // USER PROFILES
+    // =========================
+    match /users/{userId} {
+      allow read, write:
+        if request.auth != null
+        && request.auth.uid == userId;
+    }
+
+
+    // =========================
+    // ASSESSMENTS
+    // =========================
+    match /assessments/{assessmentId} {
+      allow read, write:
+        if request.auth != null
+        && (
+          resource.data.userId == request.auth.uid
+          || request.resource.data.userId == request.auth.uid
+        );
+    }
+
+
+    // =========================
+    // AI ANALYSES / HISTORY
+    // =========================
+    match /aiAnalyses/{analysisId} {
+      allow read, write:
+        if request.auth != null
+        && (
+          resource == null
+          || resource.data.userId == request.auth.uid
+          || request.resource.data.userId == request.auth.uid
+        );
+    }
+
+    match /ai_analyses/{analysisId} {
+      allow read, write:
+        if request.auth != null
+        && (
+          resource == null
+          || resource.data.userId == request.auth.uid
+          || request.resource.data.userId == request.auth.uid
+        );
+    }
+
+    match /aiHistory/{historyId} {
+      allow read, write:
+        if request.auth != null
+        && (
+          resource == null
+          || resource.data.userId == request.auth.uid
+          || request.resource.data.userId == request.auth.uid
+        );
+    }
+
+
+
+    // =========================
+    // KNOWLEDGE BASE
+    // =========================
+    match /knowledgeBase/{documentId} {
+      allow read:
+        if request.auth != null;
+
+      allow create, update, delete:
+        if request.auth != null
+        && request.auth.token.admin == true;
+    }
+
+
+    // =========================
+    // SETTINGS
+    // =========================
+    match /settings/{settingId} {
+      allow read, write:
+        if request.auth != null;
+    }
+
+
+    // =========================
+    // DEFAULT: DENY EVERYTHING ELSE
+    // =========================
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
