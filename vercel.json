@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "services": {
     "frontend": {
       "root": ".",
@@ -9,20 +10,27 @@
       "entrypoint": "main.py"
     }
   },
-  "rewrites": [
+  "builds": [
     {
-      "source": "/api(/.*)?",
-      "destination": {
-        "type": "service",
-        "service": "backend"
-      }
+      "src": "backend/main.py",
+      "use": "@vercel/python"
     },
     {
-      "source": "/(.*)",
-      "destination": {
-        "type": "service",
-        "service": "frontend"
-      }
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/main.py"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
