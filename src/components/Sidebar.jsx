@@ -92,7 +92,7 @@ const Sidebar = ({ isMobileOpen, closeMobileSidebar }) => {
       {/* Platform Foundation Footer Card */}
       <div className="p-4 bg-eco-soft rounded-2xl border border-eco-border text-xs space-y-1">
         <div className="flex items-center space-x-2 text-eco-primary font-heading font-bold">
-          <Leaf className="w-4 h-4 fill-current" />
+          <img src="/logo.png" alt="EcoPilot Logo" className="w-4 h-4 rounded object-cover" />
           <span>EcoPilot Intelligence</span>
         </div>
         <p className="text-[11px] text-eco-muted leading-relaxed font-sans">

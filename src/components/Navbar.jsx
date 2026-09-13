@@ -73,9 +73,11 @@ const Navbar = ({ toggleMobileSidebar }) => {
             )}
 
             <Link to={currentUser ? "/dashboard" : "/"} className="flex items-center space-x-2.5 group">
-              <div className="w-9 h-9 rounded-full bg-eco-primary flex items-center justify-center text-white shadow-eco-sm group-hover:scale-105 transition-transform">
-                <Leaf className="w-5 h-5 fill-current" />
-              </div>
+              <img
+                src="/logo.png"
+                alt="EcoPilot Logo"
+                className="w-9 h-9 rounded-xl object-cover shadow-sm group-hover:scale-105 transition-transform border border-emerald-100/80 bg-white"
+              />
               <div className="flex flex-col">
                 <span className="font-heading font-extrabold text-slate-900 text-xl tracking-tight flex items-center">
                   EcoPilot

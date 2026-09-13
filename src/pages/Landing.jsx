@@ -179,9 +179,9 @@ const Landing = () => {
             <div className="lg:col-span-5 relative flex justify-center">
               <div className="relative w-full max-w-md lg:max-w-none">
                 
-                {/* Floating Leaf Symbol Badge (z-30 to ensure it is NEVER hidden by the image) */}
-                <div className="absolute -top-4 -left-4 z-30 w-12 h-12 rounded-full bg-white shadow-eco-md border border-eco-border text-eco-primary flex items-center justify-center ring-4 ring-eco-soft">
-                  <Leaf className="w-6 h-6 fill-current animate-pulse" />
+                {/* Floating EcoPilot Emblem Badge */}
+                <div className="absolute -top-4 -left-4 z-30 w-12 h-12 rounded-2xl bg-white shadow-eco-md border border-eco-border flex items-center justify-center p-1 ring-4 ring-eco-soft">
+                  <img src="/logo.png" alt="EcoPilot Logo" className="w-full h-full object-cover rounded-xl" />
                 </div>
 
                 {/* Single Hero Image Container */}

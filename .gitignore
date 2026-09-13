@@ -12,6 +12,8 @@ node_modules/
 dist/
 dist-ssr/
 *.local
+vite.config.js.timestamp*
+
 
 # Environment variables
 .env

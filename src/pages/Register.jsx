@@ -63,9 +63,11 @@ const Register = () => {
 
           <div className="space-y-6 relative z-10">
             <Link to="/" className="inline-flex items-center space-x-2.5">
-              <div className="w-9 h-9 rounded-full bg-eco-secondary text-white flex items-center justify-center font-bold">
-                <Leaf className="w-5 h-5 fill-current" />
-              </div>
+              <img
+                src="/logo.png"
+                alt="EcoPilot Logo"
+                className="w-9 h-9 rounded-xl object-cover shadow-sm bg-white p-0.5 border border-white/20"
+              />
               <span className="font-heading font-extrabold text-2xl tracking-tight">EcoPilot</span>
             </Link>
 
