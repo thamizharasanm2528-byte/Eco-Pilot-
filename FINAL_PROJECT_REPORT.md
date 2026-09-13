@@ -286,18 +286,20 @@ LAYER 5: PRESENTATION LAYER
 
 | Component | Technology / Library | Version / Role |
 | :--- | :--- | :--- |
-| **Frontend** | React 18 & Vite 5 | UI component library & dev bundler |
-| **Styling** | Tailwind CSS | Utility-first responsive design tokens |
-| **Charts** | Recharts | Interactive statistical visualizer |
-| **PDF Export** | `html2pdf.js` | Client-side PDF generation engine |
-| **Backend Framework** | Python 3.10+ / FastAPI | Asynchronous REST backend server |
-| **Vector Search** | FAISS (`faiss-cpu`) | Dense vector similarity index |
-| **Embeddings** | Sentence-Transformers | `all-MiniLM-L6-v2` dense embeddings |
-| **Cloud Storage** | Firebase Firestore | NoSQL document database |
-| **Authentication** | Firebase Auth | Secure user identity service |
-| **AI API** | Groq API | Ultra-low-latency hosted inference |
-| **LLM Model** | `qwen/qwen3.8-27b` | Production 27B open weights LLM |
-| **Version Control** | Git & GitHub | Repository hosting & auto-sync hook |
+| **Frontend Framework** | React 18 & Vite 5 | UI component library & dev bundler |
+| **Frontend Hosting** | Vercel Cloud Platform | Production single-page app deployment & CDN |
+| **Backend Framework** | Python 3.10+ / FastAPI | Asynchronous REST API server & routing |
+| **Backend Hosting** | Render.com Cloud Platform | Production Uvicorn server hosting & environment secret management |
+| **Styling System** | Tailwind CSS | Utility-first responsive design tokens |
+| **Data Visualization** | Recharts | Interactive statistical visualizer |
+| **PDF Report Exporter** | `html2pdf.js` | Client-side PDF report compilation engine |
+| **Vector Index Search** | FAISS (`faiss-cpu`) | Dense vector similarity search index |
+| **Text Embeddings** | Sentence-Transformers | `all-MiniLM-L6-v2` dense embedding model |
+| **Cloud Database** | Firebase Firestore | NoSQL document persistence database |
+| **Authentication** | Firebase Auth | Secure identity & token management service |
+| **AI API Provider** | Groq API | Ultra-low-latency hosted LPU inference engine |
+| **Production LLM Model** | `qwen/qwen3.8-27b` | 27B parameter open-weights LLM model |
+| **Version Control** | Git & GitHub | Source code management & automated deployment hook |
 
 ---
 
@@ -316,10 +318,14 @@ System implementation was completed across six sequential phases:
 - **Phase 3 — Firebase Auth & Security:** Integrated Firebase Authentication and Firestore document collections with strict ownership security rules.
 - **Phase 4 — Analytics Dashboard & Hotspot Detector:** Constructed Recharts statistical visualization components and automated hotspot detection algorithms.
 - **Phase 5 — AI Intelligence & PDF Exporter:** Built AI Intelligence view and integrated `html2pdf.js` in `MonthlyReportModal.jsx` for clean PDF export.
-- **Phase 6 — UI Refinement & Auto-Sync Hook:** Configured git repository, auto-push post-commit hooks, created official `logo.png` assets, and prepared final production build.
+- **Phase 6 — UI Refinement & Auto-Sync Hook:** Configured git repository, auto-push post-commit hooks, created official `logo.png` assets, and prepared final production deployment.
 
-### 14.1 Deployment Pipeline
-The build process utilizes Vite (`npm run build`) compiling client assets into an optimized `/dist` production bundle. The Python FastAPI backend runs via Uvicorn on port 8000. All secrets (`GROQ_API_KEY`) are managed exclusively through server-side `.env` environment variables.
+### 14.1 Production Deployment Pipeline (Vercel & Render.com)
+EcoPilot utilizes a decoupled dual-cloud production deployment architecture to deliver high availability, low latency, and secure credential isolation:
+
+1. **Frontend Deployment (Vercel):** The React 18 single-page application is compiled into an optimized static build (`dist/`) via Vite (`npm run build`) and deployed to Vercel. Vercel provides global edge CDN distribution, automatic SSL certificate provisioning, and single-page application client routing rewrite rules (`public/_redirects`).
+2. **Backend Deployment (Render.com / Vercel API):** The Python 3.10 FastAPI backend is deployed on Render.com (and Vercel API routes), running an asynchronous Uvicorn ASGI web server (`uvicorn backend.main:app`). Render manages server-side environment secrets (`GROQ_API_KEY`, `GROQ_MODEL=qwen/qwen3.8-27b`), isolates backend logic from browser clients, and exposes production REST endpoints (`https://ecopilot-backend.onrender.com`).
+3. **Automated Git Push Sync:** A custom Git post-commit hook (`.git/hooks/post-commit`) automatically pushes local code commits to the GitHub main branch (`https://github.com/thamizharasanm2528-byte/Eco-Pilot-`), triggering instant continuous deployment builds across Vercel and Render.com.
 
 ---
 
