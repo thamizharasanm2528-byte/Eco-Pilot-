@@ -31,13 +31,13 @@ RAJALAKSHMI ENGINEERING COLLEGE
 https://github.com/thamizharasanm2528-byte/Eco-Pilot-
 
 **Live Prototype:**  
-[INSERT LIVE DEMO LINK]
+[PASTE LIVE PROJECT URL HERE]
 
 ---
 
 ## 2. EXECUTIVE SUMMARY
 
-Educational institutions consume vast amounts of energy, water, and material resources while generating substantial waste and carbon emissions. However, campus sustainability data is frequently fragmented across siloed department logs, manual spreadsheet trackers, and static paper audits. This makes it difficult for institutional leaders, facility managers, and sustainability coordinators to monitor environmental performance, detect resource inefficiencies, or prioritize high-impact sustainability projects.
+Educational institutions consume vast amounts of energy, water, and material resources while generating substantial waste. However, campus sustainability data is frequently fragmented across siloed department logs, manual spreadsheet trackers, and static paper audits. This makes it difficult for institutional leaders, facility managers, and sustainability coordinators to monitor environmental performance, detect resource inefficiencies, or prioritize high-impact sustainability projects.
 
 **EcoPilot** is an AI-powered campus sustainability intelligence platform designed to centralize environmental assessment data, analyze consumption patterns across five core operational categories (Energy, Water, Waste, Transportation, and Food), and convert complex environmental metrics into actionable decision intelligence. The platform combines interactive React-based data visualizations with a robust Python/FastAPI backend, integrated with Retrieval-Augmented Generation (RAG) and Groq's high-speed inference engine running the state-of-the-art `qwen/qwen3.8-27b` open LLM.
 
@@ -47,396 +47,476 @@ By bridging the gap between raw environmental data collection and evidence-based
 
 ---
 
-## 3. INTRODUCTION
+## 3. TABLE OF CONTENTS
 
-### 3.1 Background
-Educational campuses function like small cities. They house thousands of students and staff members, operate complex facilities, consume massive electrical and water grids, maintain vehicle fleets, and run large-scale dining services. Managing the environmental footprint of these operations involves several key challenges:
-- **Energy Consumption:** Heating, ventilation, air conditioning (HVAC), laboratory equipment, and lighting represent significant utility expenditures and carbon outputs.
-- **Water Management:** High daily volume for sanitation, landscaping, and dining facilities often suffers from undetected leaks and inefficient distribution.
-- **Waste Generation:** Municipal solid waste, e-waste from computer labs, and single-use plastics require rigorous sorting and diversion strategies.
-- **Transportation:** Commuter vehicles, campus shuttles, and logistics account for substantial scope 3 greenhouse gas emissions.
-- **Food Sustainability:** Dining halls generate organic food waste and incur embedded carbon footprints from food supply procurement.
-- **Information Fragmentation:** Raw utility bills, facility logs, and departmental reports are rarely integrated into a single unified analytical framework.
-
-### 3.2 Need for the Project
-To achieve meaningful sustainability progress, institutional decision-makers need a centralized intelligence hub that offers:
-1. **Unified Data Storage:** A single repository to record and standardize multi-category environmental assessments.
-2. **Dynamic Performance Analytics:** Real-time visibility into category scores, consumption trends, and benchmark comparisons.
-3. **Hotspot Detection:** Immediate identification of high-emission or high-waste operational areas requiring urgent intervention.
-4. **Evidence-Grounded AI Support:** Intelligent recommendation engines that ground suggestions in domain-specific sustainability standards rather than generic advice.
-
-### 3.3 Project Overview
-EcoPilot was developed to fulfill these needs. Built with a modern web architecture, EcoPilot acts as a centralized intelligence platform. Users input or import category assessments, view instant statistical breakdowns, access a curated domain knowledge base, and trigger RAG-assisted AI analysis to generate prioritized environmental action plans.
-
-### 3.4 Target Users
-- **Campus Sustainability Coordinators:** For auditing environmental metrics and generating institutional compliance reports.
-- **Facility Operations & Energy Managers:** For tracking resource consumption and identifying operational inefficiencies.
-- **Institutional Administrators & Leaders:** For reviewing high-level sustainability executive summaries and budgeting eco-friendly initiatives.
-- **Authorized Student Representatives & Environmental Clubs:** For participating in institutional sustainability tracking and awareness.
+- **Abstract** (Page 2)
+- **Table of Contents** (Page 3)
+- **1. Introduction** (Page 4)
+  - 1.1 Relevance to Generative AI, RAG and Cloud Computing
+- **2. Background and Literature Context** (Page 4)
+- **3. Problem Statement** (Page 5)
+- **4. Project Objectives and Scope** (Page 5)
+  - 4.1 Objectives
+  - 4.2 Scope
+- **5. SDG Alignment (Primary: SDG 12)** (Page 6)
+- **6. Proposed Solution** (Page 7)
+- **7. System Features** (Page 7)
+- **8. AI Elements and Tools Used** (Page 8)
+- **9. RAG Architecture** (Page 9)
+- **10. System Architecture** (Page 9)
+- **11. Data Flow / AI Workflow** (Page 10)
+- **12. Technology Stack** (Page 11)
+- **13. Methodology and Development Approach** (Page 11)
+- **14. Implementation** (Page 12)
+  - 14.1 Deployment Pipeline
+- **15. Security** (Page 13)
+- **16. Responsible AI & Ethics** (Page 14)
+- **17. Testing and Validation** (Page 14)
+- **18. Results and Qualitative Outcomes** (Page 15)
+- **19. Project Story** (Page 16)
+- **20. Internship Learning and Reflection** (Page 16)
+- **21. Discussion and Limitations** (Page 17)
+- **22. Future Scope** (Page 18)
+- **23. Conclusion** (Page 18)
+- **24. Project Submission Placeholders** (Page 18)
+- **25. References** (Page 19)
+- **26. Appendices** (Page 19)
 
 ---
 
-## 4. PROBLEM STATEMENT
+## 1. INTRODUCTION
 
-Educational institutions consume significant energy, water, and material resources while generating substantial waste and emissions. However, campus sustainability information is typically distributed across disconnected departments, manual spreadsheets, and unstandardized paper records, making environmental impact difficult to measure, interpret, and optimize. Consequently, critical resource inefficiencies remain undetected, sustainability planning lacks empirical evidence, and operational decisions are often reactive rather than data-driven.
+Assessment and continuous monitoring of environmental impact are central to modern institutional governance, yet the manual collection and analysis of campus sustainability data remains time-consuming, fragmented, and prone to inconsistency. EcoPilot was conceived to address this critical operational gap by pairing an artificial intelligence intelligence model with a modern web application framework, enabling sustainability coordinators, facility operations managers, and college leadership to evaluate environmental performance, identify resource inefficiencies, and implement grounded action plans in seconds rather than weeks.
+
+The project was undertaken as part of the Virtual 1M1B AI for Sustainability Virtual Internship 2026, in collaboration with the AICTE National Internship Portal and co-certified by IBM SkillsBuild. It was designed to provide hands-on exposure to core technical themes: Retrieval-Augmented Generation (RAG) vector pipelines, prompt engineering for structured AI output, server-side API proxy security, cloud-based data persistence with Firebase, and full-stack software development lifecycle execution from local prototyping through to production cloud deployment.
+
+### 1.1 Relevance to Generative AI, RAG and Cloud Computing
+The platform is directly relevant to both core pillars of the internship track. On the Artificial Intelligence side, it demonstrates practical prompt engineering, schema-constrained generation, and vector retrieval search (RAG) to ground public-facing AI recommendations in verified environmental standards, eliminating ungrounded hallucinations. On the Cloud Computing side, it demonstrates the use of managed serverless infrastructure — Firebase Authentication for identity management and Firestore for document storage — paired with a high-performance Python FastAPI backend framework that isolates credentials and coordinates server-to-server inference calls to the Groq API engine running `qwen/qwen3.8-27b`.
+
+---
+
+## 2. BACKGROUND AND LITERATURE CONTEXT
+
+Generative AI models, specifically open-weights LLMs accelerated by hardware inference engines like Groq, have increasingly been applied to decision-support systems and analytical software. However, a primary obstacle in applying large language models to complex domain tasks — such as environmental compliance auditing — is ensuring that model output is factually accurate and machine-parseable rather than free-form text. In EcoPilot, this challenge is resolved through Retrieval-Augmented Generation (RAG), which pairs real-time metrics with vector-indexed knowledge passages from sustainability baselines before passing structured prompts to the LLM.
+
+Cloud-based Backend-as-a-Service (BaaS) architectures, combined with microservice REST backends, have become standard practice for scalable web systems. Firebase provides managed identity authentication and NoSQL document persistence without infrastructure overhead. Combining BaaS data management with a lightweight FastAPI proxy for AI orchestration — rather than invoking LLM API keys directly from client browsers — represents industry best practice for secret isolation, CORS enforcement, and rate limiting.
+
+---
+
+## 3. PROBLEM STATEMENT
+
+Educational institutions consume significant resources (electricity, water, fuel, paper, food) and generate different forms of environmental impact across campus operations. However, sustainability information is almost universally distributed across disconnected departments, manual spreadsheets, and unstandardized paper records. Facilities managers track kWh on utility bills; dining services track food waste separately; commuter transit data is recorded by security; and municipal waste diversion is tracked by maintenance. Because of this information fragmentation:
+
+- **Undetected Resource Inefficiencies:** High-emission or high-waste operational areas remain hidden without centralized risk scoring.
+- **Lack of Empirical Guidance:** Sustainability planning often relies on guesswork or generic advice rather than empirical campus data.
+- **Time-Consuming Manual Auditing:** Generating compliance reports requires weeks of manual data gathering and spreadsheet calculation.
+- **Generic AI Hallucinations:** Standard standalone AI tools produce vague, ungrounded recommendations unsupported by real environmental standards.
 
 > **"How can an AI-powered platform help educational institutions collect, analyze, interpret, and act upon campus sustainability data using evidence-based recommendations and intelligent decision support?"**
 
 ---
 
-## 5. PROJECT OBJECTIVES
+## 4. PROJECT OBJECTIVES AND SCOPE
 
-1. **Centralize Campus Sustainability Data:** Provide a standardized assessment framework across five core categories: Energy, Water, Waste, Transportation, and Food.
-2. **Measure Category & Overall Performance:** Automatically compute normalized sustainability scores (0–100) and grade institutional health.
-3. **Provide Visual Analytics & Trend Tracking:** Render interactive metric charts, comparative benchmarks, and historical performance breakdowns.
-4. **Detect Operational Hotspots:** Automatically highlight category weak points and high-impact resource drains.
-5. **Implement RAG Architecture:** Ground AI recommendations by retrieving domain-specific evidence from a curated sustainability knowledge vector store.
-6. **Leverage High-Performance LLMs:** Integrate Groq API with `qwen/qwen3.8-27b` to transform raw metrics and retrieved evidence into structured intelligence.
-7. **Generate Actionable Output:** Produce executive summaries, key findings, prioritized recommendations, and multi-phase implementation plans.
-8. **Ensure User & Data Security:** Enforce secure user authentication (Firebase Auth), strict authorization (Firestore Security Rules), and server-side API key protection.
-9. **Deliver a User-Centric Interface:** Maintain a responsive, accessible React dashboard optimized for administrative review and decision-making.
+### 4.1 Objectives
+1. **Centralize Campus Data:** Design and implement a multi-category assessment framework covering Energy, Water, Waste, Transportation, and Food.
+2. **AI & RAG Orchestration:** Build a Retrieval-Augmented Generation (RAG) backend utilizing `sentence-transformers` embeddings and FAISS vector index to ground AI recommendations.
+3. **Secure API Proxy:** Construct a server-side Python FastAPI proxy ensuring the Groq API key and Firebase admin secrets are never exposed to the client.
+4. **Hotspot & Trend Analytics:** Develop automated algorithms to detect operational risk areas, compute category health scores (0–100), and render interactive Recharts visualizations.
+5. **Data Portability & Reporting:** Enable structured CSV/Excel data import and client-side PDF executive report generation via `html2pdf.js`.
+6. **SDG 12 Alignment:** Directly advance UN Sustainable Development Goal 12 (Responsible Consumption & Production) through evidence-based resource management.
 
----
-
-## 6. SDG ALIGNMENT
-
-```
-+-------------------------------------------------------------------------+
-|                              PRIMARY SDG                                |
-|          SDG 12 — RESPONSIBLE CONSUMPTION AND PRODUCTION                |
-+-------------------------------------------------------------------------+
-                                   |
-         +-------------------------+-------------------------+
-         |                         |                         |
-         v                         v                         v
-  SUPPORTING SDG 6          SUPPORTING SDG 7          SUPPORTING SDG 11
-Clean Water & Sanitation  Affordable & Clean Energy  Sustainable Cities & Communities
-```
-
-### Primary SDG: SDG 12 — Responsible Consumption and Production
-EcoPilot directly advances **SDG 12 Target 12.2** (Sustainable management and efficient use of natural resources) and **Target 12.5** (Substantially reduce waste generation through prevention, reduction, recycling, and reuse). By providing institutions with fine-grained tracking for electricity, water, waste diversion, transit, and food procurement, EcoPilot equips campuses to eliminate wasteful operational patterns and establish sustainable procurement protocols.
-
-### Supporting SDGs
-- **SDG 6 — Clean Water and Sanitation:** Supports water conservation tracking, leak detection reporting, and rainwater harvesting metrics.
-- **SDG 7 — Affordable and Clean Energy:** Tracks kilowatt-hour (kWh) intensity, renewable solar capacity, and HVAC energy efficiency across facilities.
-- **SDG 11 — Sustainable Cities and Communities:** Helps transform educational institutions into sustainable micro-communities that minimize carbon footprints and urban resource stress.
-
-*Note: These alignments represent project-level sustainability focus areas, not separate application features.*
+### 4.2 Scope
+The scope of EcoPilot encompasses full-stack software development: client UI state management in React 18, FastAPI REST API services, FAISS vector indexing, Groq LLM integration (`qwen/qwen3.8-27b`), and Firebase authentication/database persistence. The current scope focuses on 5 operational categories and desktop-optimized web access.
 
 ---
 
-## 7. PROPOSED SOLUTION
+## 5. SDG ALIGNMENT (PRIMARY: SDG 12)
 
-EcoPilot provides an end-to-end intelligence workflow that transforms raw operational data into grounded strategic decisions:
+EcoPilot directly advances UN Sustainable Development Goal 12: Responsible Consumption and Production. Specifically, it aligns with Target 12.2 (Sustainable management and efficient use of natural resources) and Target 12.5 (Substantially reduce waste generation through prevention, reduction, recycling, and reuse).
 
-```
-[ USER ]
-   │
-   ▼
-[ Campus Sustainability Assessment Entry / Import ]
-   │
-   ▼
-[ Firestore Data Storage & Normalization ]
-   │
-   ▼
-[ Analytics Engine: Scores, Hotspots & Trends ]
-   │
-   ▼
-[ Knowledge Retrieval / FAISS Vector RAG ]
-   │
-   ▼
-[ Groq AI Engine: qwen/qwen3.8-27b ]
-   │
-   ▼
-[ Structured AI Sustainability Intelligence ]
-   │
-   ├──────► Executive Summary & Key Findings
-   ├──────► Prioritized Recommendations
-   └──────► Multi-Phase Action Plan
-```
-
-### Stage Description:
-1. **Data Collection:** Users complete structured assessments across 5 categories or import CSV/Excel data files.
-2. **Normalization & Storage:** The system validates metrics, calculates category performance percentages, and saves standardized records into Firebase Firestore.
-3. **Analytics Processing:** The frontend analytics module calculates metrics, identifies top hotspots, and builds historical trend models.
-4. **RAG Vector Search:** On AI invocation, the FastAPI backend retrieves domain-specific guidelines from a FAISS vector index based on assessment metrics.
-5. **Grounded Prompt Construction:** Metrics, detected hotspots, and retrieved knowledge passages are compiled into a structured prompt context.
-6. **Groq Inference:** The context is processed by `qwen/qwen3.8-27b` via Groq's high-speed inference infrastructure.
-7. **Intelligence Delivery:** The React UI presents formatted findings, recommendations, and evidence-backed action plans.
+Supporting SDG Alignments include:
+- **SDG 6 — Clean Water & Sanitation:** Monitors water consumption intensity, leak detection reporting, and rainwater harvesting metrics.
+- **SDG 7 — Affordable & Clean Energy:** Tracks building kWh intensity, renewable solar capacity, and HVAC efficiency.
+- **SDG 11 — Sustainable Cities & Communities:** Helps transform educational institutions into eco-friendly micro-communities.
 
 ---
 
-## 8. SYSTEM FEATURES
+## 6. PROPOSED SOLUTION
 
-### 8.1 User Authentication & Route Protection
-- **Email/Password Auth:** Powered by Firebase Authentication for user registration and sign-in.
-- **Protected Routes:** Guards dashboard access using an `AuthContext` state wrapper.
-- **Session Management:** Secure token persistence and user logout workflows.
-
-### 8.2 Sustainability Assessments
-- **Category Coverage:** Multi-point data entry for **Energy**, **Water**, **Waste**, **Transportation**, and **Food**.
-- **Data Import & Export:** Supports structured Excel/CSV import parsing and comprehensive report export (CSV export and PDF report generation via `html2pdf.js`).
-- **Human-Readable Formatting:** Converts raw metric values into clean, readable summaries rather than unformatted technical IDs.
-
-### 8.3 Sustainability Dashboard
-- **Overall Score Card:** Displays real-time overall score (0–100) and letter rating (A+ to F).
-- **Category Overview Grid:** Displays scores, risk levels, and trend indicators across all 5 operational categories.
-- **Recent Assessments Table:** Displays recent audit submissions with score badges and quick action links.
-
-### 8.4 Analytics & Hotspot Detection
-- **Visual Analytics:** Interactive Recharts graphs showing category performance, risk distribution, and historical score trajectories.
-- **Automated Hotspot Detector:** Scans assessment scores to isolate high-priority operational vulnerabilities.
-- **Category Drilldowns:** Deep-dive analysis for specific categories (e.g., energy consumption vs. renewable percentage).
-
-### 8.5 Assessment Comparison
-- **Multi-Period Comparison:** Allows side-by-side performance comparison across different audit dates or operational categories.
-- **Delta Tracking:** Highlights score progress, category improvements, or operational degradation over time.
-
-### 8.6 Knowledge Base
-- **Reference Library:** Curated repository of campus sustainability guidelines, waste management standards, and energy efficiency baselines.
-- **Searchable Index:** Accessible documentation for environmental compliance and standard operating procedures.
-
-### 8.7 AI Intelligence Engine
-- **Automated Report Generation:** One-click AI evaluation generating executive summaries, critical findings, and priority classifications.
-- **Evidence-Grounded Recommendations:** Suggestions paired with retrieved knowledge evidence for institutional transparency.
-- **Structured Action Plans:** Short-term, medium-term, and long-term implementation schedules.
-
-### 8.8 User Profile & Settings
-- **Profile Management:** Displays user organization, role title, and verified membership credentials.
-- **Account Controls:** Password reset and profile information updates.
-
----
-
-## 9. AI ELEMENTS AND TOOLS USED
-
-### AI Infrastructure & Model
-- **LLM Inference Provider:** **Groq API** (Selected for ultra-low latency inference processing).
-- **Production Model:** `qwen/qwen3.8-27b`
-- **Environment Variable:** `GROQ_MODEL=qwen/qwen3.8-27b`
-
-### Architectural Rationale for Hosted Inference API
-Running a 27-billion parameter language model locally requires multi-GPU hardware (e.g., NVIDIA A100/H100 specs), which is impractical for standard institutional local deployments. Leveraging Groq's specialized LPU (Language Processing Unit) hardware via API enables:
-- Near-instantaneous response times (< 2 seconds for complete multi-page analysis).
-- Zero client-side or server-side GPU hardware requirements.
-- Standardized, reliable JSON structure output parsing.
-
-### AI Functional Capabilities
-- **Multi-Category Data Synthesis:** Merging 5 distinct category inputs into a unified environmental risk evaluation.
-- **Pattern & Anomaly Analysis:** Identifying operational discrepancies (e.g., high energy usage despite low occupancy).
-- **Natural Language Summarization:** Translating numerical utility ratios into executive-level prose.
-- **Action Plan Formulation:** Constructing step-by-step mitigation roadmaps tailored to institutional scale.
-
-*Model Clarification: IBM Granite was evaluated during initial technical exploration, but `qwen/qwen3.8-27b` accessed via Groq API is the active production AI model.*
-
----
-
-## 10. RAG ARCHITECTURE
-
-### The Need for Retrieval-Augmented Generation
-Standard standalone LLMs suffer from "hallucination"—generating generic, plausible-sounding advice that may lack factual grounding or contradict established engineering standards. In campus sustainability, generic advice (e.g., "install solar panels") is unhelpful without specific contextual grounding.
-
-EcoPilot implements RAG to anchor language generation in curated sustainability knowledge:
+EcoPilot delivers an end-to-end intelligence platform that converts raw environmental metrics into grounded strategic decisions across 11 sequential operational stages:
 
 ```
-                  +--------------------------------+
-                  |  Campus Assessment Data        |
-                  |  + Calculated Metrics          |
-                  +---------------+----------------+
-                                  |
-                                  v
+[ User Input / CSV Import ]
+          │
+          ▼
+[ Category Data Normalization (0-100 Scale) ]
+          │
+          ▼
+[ Firebase Firestore Document Persistence ]
+          │
+          ▼
+[ Statistical Analytics & Hotspot Detection Engine ]
+          │
+          ▼
+[ FAISS Vector Index Similarity Retrieval (RAG) ]
+          │
+          ▼
+[ Grounded Context & Metric Prompt Assembly ]
+          │
+          ▼
+[ FastAPI Backend Proxy Execution ]
+          │
+          ▼
+[ Groq Hardware Accelerated LLM (qwen/qwen3.8-27b) ]
+          │
+          ▼
+[ JSON Schema Validation & Error Handling ]
+          │
+          ▼
+[ React Interactive UI Rendering & Action Plan ]
+          │
+          ▼
+[ Client-Side PDF Report Generation (html2pdf.js) ]
+```
+
+---
+
+## 7. SYSTEM FEATURES
+
+EcoPilot incorporates 8 core implemented system features:
+
+1. **User Authentication & Authorization:** Firebase Auth email/password login, protected client routing, and document-level Firestore security rules.
+2. **Multi-Category Sustainability Assessments:** Structured data collection across Energy, Water, Waste, Transit, and Food with instant score calculation.
+3. **Assessment Import & Export:** Supports structured CSV/Excel template parsing and export for multi-campus audit records.
+4. **Executive Dashboard:** Real-time overall sustainability score (0–100), letter grade (A+ to F), and category health overview cards.
+5. **Analytics & Automated Hotspot Detector:** Interactive Recharts visual graphs, trend trajectory analysis, and instant category vulnerability alerts.
+6. **Multi-Period Assessment Comparison:** Side-by-side comparative analysis between audit periods to track sustainability score progress over time.
+7. **Knowledge Base & Reference Library:** Searchable repository of campus sustainability guidelines, zero-waste targets, and energy standards.
+8. **AI Intelligence Engine & PDF Exporter:** RAG-backed executive summary generation, evidence-grounded recommendations, action plans, and client-side PDF export via `html2pdf.js`.
+
+---
+
+## 8. AI ELEMENTS AND TOOLS USED
+
+### AI Infrastructure Stack:
+- **LLM Inference Provider:** Groq API (Hosted LPU hardware inference engine)
+- **Production LLM Model:** `qwen/qwen3.8-27b`
+- **Environment Variable Configuration:** `GROQ_MODEL=qwen/qwen3.8-27b`
+
+### Rationale for Hosted API Inference:
+Running a 27B parameter model locally requires multi-GPU hardware (NVIDIA A100 specs), which is impractical for standard institutional deployments. Groq API's LPU acceleration provides sub-2-second inference, guaranteed JSON schema compliance, and zero client GPU overhead.
+
+*Model Clarification: IBM Granite was evaluated during early exploratory testing, but `qwen/qwen3.8-27b` accessed via Groq API is the active production model.*
+
+---
+
+## 9. RAG ARCHITECTURE
+
+Retrieval-Augmented Generation (RAG) anchors model outputs in factual knowledge passages retrieved from a FAISS vector index, preventing ungrounded AI hallucinations:
+
+```
 +------------------+     +-------------------+     +--------------------+
-| User Query /     |     | FAISS Vector Index|     | Top K Relevant     |
-| Analysis Trigger |────►| Retrieval Search  |────►| Sustainability     |
-+------------------+     +-------------------+     | Document Passages  |
-                                                   +---------+----------+
+| User Assessment  |     | FAISS Vector Store|     | Top K Evidence     |
+| Data & Metrics   |────►| Similarity Search |────►| Passages Retrieved |
++------------------+     +-------------------+     +---------+----------+
                                                              |
                                                              v
 +------------------+     +-------------------+     +--------------------+
-| Groq LLM API     |◄────| Grounded Prompt   |◄────+ Combined Context   |
-| qwen/qwen3.8-27b |     | Assembly          |     | Assembly           |
+| Groq LLM API     |◄────| Grounded Prompt   |◄────+ Context Ingestion  |
+| qwen/qwen3.8-27b |     | Assembly          |     | Engine             |
 +--------+---------+     +-------------------+     +--------------------+
          |
          v
 +-----------------------------------------------------------------------+
-|                 AI SUSTAINABILITY INTELLIGENCE                        |
-|                                                                       |
+|                 STRUCTURED AI INTELLIGENCE OUTPUT                     |
 |  [ Executive Summary ]  [ Key Findings ]  [ Grounded Recommendations ]|
 +-----------------------------------------------------------------------+
 ```
 
-### Step-by-Step RAG Execution Workflow
-1. **Ingestion & Vectorization:** Knowledge documents (sustainability standards, energy baselines) are chunked and converted into vector embeddings using `sentence-transformers` (`all-MiniLM-L6-v2`) and stored in a FAISS vector index.
-2. **Contextual Retrieval:** When an assessment analysis is requested, the system queries the FAISS vector index for knowledge chunks relevant to the campus's lowest-scoring categories.
-3. **Prompt Augmentation:** The top-matching evidence passages are injected into the system prompt alongside the structured assessment scores.
-4. **Grounded Generation:** `qwen/qwen3.8-27b` generates recommendations specifically citing and adhering to the retrieved evidence.
+---
+
+## 10. SYSTEM ARCHITECTURE
+
+EcoPilot uses a 3-tier architecture isolating client, API, and cloud services:
+
+```
+[ REACT 18 FRONTEND (Vite / Tailwind) ]
+               │
+               │ HTTPS REST Calls
+               ▼
+[ FASTAPI BACKEND PROXY (Python 3.10) ]
+       ├── GROQ_API_KEY (Server Secret)
+       ├── FAISS Vector Store Index
+       └── SentenceTransformers Embeddings
+               │
+       ┌───────┴───────┐
+       ▼               ▼
+[ FIREBASE AUTH/DB ]  [ GROQ AI API Engine ]
+(Firestore Users &    (Model: qwen/qwen3.8-27b)
+ Assessments)
+```
 
 ---
 
-## 11. AI DATA & WORKFLOW
+## 11. DATA FLOW / AI WORKFLOW
+
+The end-to-end data processing workflow spans 5 structural layers:
 
 ```
-  LAYER 1: INPUT LAYER
-  ├── Energy (kWh, Solar %)
-  ├── Water (Liters, Rainwater %)
-  ├── Waste (Kg, Diversion %)
-  ├── Transit (EV %, Public Transit %)
-  └── Food (Local %, Organic Waste %)
-            │
-            ▼
-  LAYER 2: DATA PROCESSING LAYER
-  ├── Normalization (0 - 100 Scale)
-  ├── Validation & Schema Check
-  └── Firestore Database Persistence
-            │
-            ▼
-  LAYER 3: ANALYTICS & RAG RETRIEVAL LAYER
-  ├── Score Calculation & Hotspot Identification
-  ├── FAISS Vector Similarity Search
-  └── Context Construction (Metrics + Evidence)
-            │
-            ▼
-  LAYER 4: AI INFERENCE LAYER (GROQ API)
-  ├── Model: qwen/qwen3.8-27b
-  ├── Prompt Execution with Constraints
-  └── Token-Throttled Response Streaming
-            │
-            ▼
-  LAYER 5: PRESENTATION LAYER
-  ├── React UI Components
-  ├── Interactive Recharts Graphs
-  └── PDF Report Exporter
+LAYER 1: INPUT LAYER
+└── Energy, Water, Waste, Transit, Food Assessments (Form/CSV)
+
+LAYER 2: DATA PROCESSING LAYER
+└── Score Normalization (0-100) & Firestore Document Storage
+
+LAYER 3: ANALYTICS & RAG RETRIEVAL LAYER
+└── Hotspot Identification & FAISS Vector Index Similarity Search
+
+LAYER 4: AI INFERENCE LAYER (GROQ API)
+└── qwen/qwen3.8-27b Prompt Execution (Max 950 tokens throttle)
+
+LAYER 5: PRESENTATION LAYER
+└── React Dashboard, Recharts Visuals & Client PDF Exporter
 ```
 
 ---
 
 ## 12. TECHNOLOGY STACK
 
-| Layer / Component | Technology / Library | Description & Version |
+| Component | Technology / Library | Version / Role |
 | :--- | :--- | :--- |
-| **Frontend Framework** | React 18 | Declarative component-based user interface library |
-| **Build Tool & Dev Server**| Vite 5 | Next-generation frontend tooling and bundler |
-| **Styling & Design System**| Tailwind CSS | Utility-first CSS framework for responsive layout design |
-| **Data Visualization** | Recharts | Composable React charting library for analytics |
-| **PDF Export Engine** | `html2pdf.js` | Client-side HTML to PDF generation engine |
-| **Icon Library** | Lucide React | Clean, modern UI icon set |
-| **Backend Framework** | Python 3.10+ / FastAPI | High-performance asynchronous REST API framework |
-| **Web Server Engine** | Uvicorn | ASGI web server implementation |
-| **Vector Store (RAG)** | FAISS (`faiss-cpu`) | Dense vector similarity search index |
-| **Text Embeddings** | Sentence-Transformers | `all-MiniLM-L6-v2` dense embedding model |
-| **Database** | Firebase Firestore | NoSQL document database for assessment persistence |
-| **Authentication** | Firebase Auth | Secure identity and session management service |
-| **AI LLM API Provider** | Groq API | Ultra-low latency hosted LLM inference engine |
-| **Active AI Model** | `qwen/qwen3.8-27b` | Open-weights 27B parameter LLM model |
-| **Version Control** | Git & GitHub | Distributed source code management and repository hosting |
+| **Frontend** | React 18 & Vite 5 | UI component library & dev bundler |
+| **Styling** | Tailwind CSS | Utility-first responsive design tokens |
+| **Charts** | Recharts | Interactive statistical visualizer |
+| **PDF Export** | `html2pdf.js` | Client-side PDF generation engine |
+| **Backend Framework** | Python 3.10+ / FastAPI | Asynchronous REST backend server |
+| **Vector Search** | FAISS (`faiss-cpu`) | Dense vector similarity index |
+| **Embeddings** | Sentence-Transformers | `all-MiniLM-L6-v2` dense embeddings |
+| **Cloud Storage** | Firebase Firestore | NoSQL document database |
+| **Authentication** | Firebase Auth | Secure user identity service |
+| **AI API** | Groq API | Ultra-low-latency hosted inference |
+| **LLM Model** | `qwen/qwen3.8-27b` | Production 27B open weights LLM |
+| **Version Control** | Git & GitHub | Repository hosting & auto-sync hook |
 
 ---
 
-## 13. SYSTEM ARCHITECTURE
+## 13. METHODOLOGY AND DEVELOPMENT APPROACH
 
-```
-                                  +-----------------------+
-                                  |     USER BROWSER      |
-                                  |   (React 18 + Vite)   |
-                                  +-----------+-----------+
-                                              |
-                                              | HTTPS REST API
-                                              v
-                                  +-----------------------+
-                                  |    FASTAPI BACKEND    |
-                                  |    (Python / Uvicorn) |
-                                  +---+---------------+---+
-                                      |               |
-             +------------------------+               +------------------------+
-             |                                                                 |
-             v                                                                 v
-+-------------------------+                                       +-------------------------+
-|    FIREBASE SERVICES    |                                       |      GROQ AI API        |
-|                         |                                       |                         |
-|  - Firebase Auth        |                                       |  - Model:               |
-|  - Firestore Database   |                                       |    qwen/qwen3.8-27b     |
-|    (users, assessments, |                                       |  - Server-Side Secret   |
-|     analyses)           |                                       |    GROQ_API_KEY         |
-+-------------------------+                                       +------------+------------+
-                                                                               |
-                                                                               v
-                                                                  +-------------------------+
-                                                                  |  RAG VECTOR RETRIEVAL   |
-                                                                  |  - FAISS Vector Store   |
-                                                                  |  - SentenceTransformers |
-                                                                  +-------------------------+
-```
-
-### Layer Responsibilities:
-- **Presentation Layer (React):** Handles UI state, interactive forms, chart rendering, client-side PDF exports, and routing.
-- **Backend API Layer (FastAPI):** Controls request routing, assessment validation, score processing, and secure AI backend dispatching.
-- **Data Persistence Layer (Firebase):** Manages user account records, encrypted tokens, and historical assessment documents.
-- **AI & RAG Intelligence Layer:** Performs vector similarity searches against FAISS and executes grounded prompt queries to Groq API.
+EcoPilot was developed using an agile, iterative engineering methodology. Each development phase produced a distinct, independently testable iteration of system capability.
 
 ---
 
-## 14. DATABASE & DATA STRUCTURE
+## 14. IMPLEMENTATION
 
-EcoPilot utilizes a document-oriented data model stored in Firebase Firestore:
+System implementation was completed across six sequential phases:
 
-### 1. `users` Collection
-Stores registered user accounts and institutional metadata.
-```json
-{
-  "uid": "USER_UNIQUE_ID",
-  "email": "user@institution.edu",
-  "fullName": "Dr. Sarah Jenkins",
-  "organization": "Greenfield University",
-  "role": "Campus Sustainability Officer",
-  "createdAt": "2026-08-15T10:30:00Z"
-}
-```
+- **Phase 1 — Foundation & Assessment Engine:** Configured Vite + React 18 frontend, designed glassmorphism CSS design system, built 5-category assessment state management.
+- **Phase 2 — FastAPI Backend & RAG Pipeline:** Created FastAPI REST server (`backend/main.py`), configured FAISS vector store, sentence-transformers embeddings, and Groq API client.
+- **Phase 3 — Firebase Auth & Security:** Integrated Firebase Authentication and Firestore document collections with strict ownership security rules.
+- **Phase 4 — Analytics Dashboard & Hotspot Detector:** Constructed Recharts statistical visualization components and automated hotspot detection algorithms.
+- **Phase 5 — AI Intelligence & PDF Exporter:** Built AI Intelligence view and integrated `html2pdf.js` in `MonthlyReportModal.jsx` for clean PDF export.
+- **Phase 6 — UI Refinement & Auto-Sync Hook:** Configured git repository, auto-push post-commit hooks, created official `logo.png` assets, and prepared final production build.
 
-### 2. `assessments` Collection
-Stores submitted category assessments and computed metrics.
-```json
-{
-  "id": "ASSESSMENT_DOC_ID",
-  "userId": "USER_UNIQUE_ID",
-  "campusName": "Main Campus",
-  "academicYear": "2025-2026",
-  "overallScore": 78.5,
-  "overallGrade": "B+",
-  "categories": {
-    "energy": { "score": 72.0, "consumptionKwh": 125000, "solarPercentage": 15 },
-    "water": { "score": 85.0, "consumptionLiters": 450000, "rainwaterHarvesting": true },
-    "waste": { "score": 64.0, "wasteGeneratedKg": 1200, "recyclingRate": 35 },
-    "transportation": { "score": 80.0, "evChargingStations": 12, "publicTransitUse": 60 },
-    "food": { "score": 91.0, "localFoodPercentage": 40, "compostingProgram": true }
-  },
-  "timestamp": "2026-09-01T14:20:00Z"
-}
-```
-
-### 3. `ai_analyses` Collection
-Stores generated AI intelligence output associated with assessment records.
-```json
-{
-  "id": "ANALYSIS_DOC_ID",
-  "assessmentId": "ASSESSMENT_DOC_ID",
-  "userId": "USER_UNIQUE_ID",
-  "modelUsed": "qwen/qwen3.8-27b",
-  "executiveSummary": "Main Campus displays strong food and water conservation performance...",
-  "findings": [...],
-  "recommendations": [...],
-  "actionPlan": { "shortTerm": [...], "mediumTerm": [...], "longTerm": [...] },
-  "createdAt": "2026-09-01T14:21:30Z"
-}
-```
+### 14.1 Deployment Pipeline
+The build process utilizes Vite (`npm run build`) compiling client assets into an optimized `/dist` production bundle. The Python FastAPI backend runs via Uvicorn on port 8000. All secrets (`GROQ_API_KEY`) are managed exclusively through server-side `.env` environment variables.
 
 ---
 
 ## 15. SECURITY
 
-### 15.1 User Authentication Security
-Firebase Authentication manages identity verification, utilizing industry-standard OAuth 2.0 and JWT token persistence. Password credentials are never stored locally in plain text.
+- **Authentication:** Managed via Firebase Auth with encrypted JWT session persistence.
+- **Authorization:** Strict Firestore security rules ensure users can only access their own assessment documents.
+- **API Key Isolation:** `GROQ_API_KEY` remains strictly server-side inside FastAPI; zero keys are exposed to client JavaScript bundles.
 
-### 15.2 Firestore Security Rules & Authorization
-Strict database rules restrict read and write access to authenticated document owners:
+---
+
+## 16. RESPONSIBLE AI & ETHICS
+
+EcoPilot adheres to core Responsible AI principles:
+- **Grounding:** All AI recommendations are grounded in retrieved vector passages to eliminate hallucinations.
+- **Human Oversight:** AI outputs function as decision support for human facility managers, not autonomous commands.
+- **Privacy:** Assessment metrics sent to Groq API contain non-personal environmental values.
+
+---
+
+## 17. TESTING AND VALIDATION
+
+Comprehensive functional verification was conducted across all core modules:
+
+| Module / Feature | Testing Criteria Execution | Verification Result |
+| :--- | :--- | :--- |
+| **Authentication** | Registration, login, invalid credentials, protected client route access | **PASS** — Route guards block unauthorized access |
+| **Assessment Form** | 5-category data entry, normalization, CSV/Excel parsing | **PASS** — Metrics normalized & stored cleanly in Firestore |
+| **Analytics Engine** | Score weighting accuracy, hotspot triggering, Recharts rendering | **PASS** — Visual graphs accurately reflect database values |
+| **AI & RAG Pipeline** | FAISS retrieval match, Groq API call, max_tokens throttle (950) | **PASS** — Structured JSON returned in ~1.8 seconds |
+| **PDF Report Exporter** | Client-side `html2pdf.js` compilation, layout alignment | **PASS** — Clean multi-page PDF generated without browser print break |
+| **API Security Proxy** | Inspected client JS bundles for string matches of `GROQ_API_KEY` | **PASS** — Zero credentials exposed client-side |
+
+---
+
+## 18. RESULTS AND QUALITATIVE OUTCOMES
+
+The completed EcoPilot platform satisfies all defined project objectives. Functional verification confirmed robust data collection, accurate visual analytics, evidence-grounded AI recommendations, and complete API secret isolation.
+
+### 18.1 Summary of Technical Issues Resolved
+
+| Issue Identified | Root Cause | Resolution Implemented |
+| :--- | :--- | :--- |
+| **404 Groq Model Not Found** | Model `llama-3.3-70b-versatile` retired by provider | Migrated model identifier to active production model `qwen/qwen3.8-27b` across backend config |
+| **429 Groq Rate Limit Exceeded** | Default max_tokens (2500) exceeded free tier limit (1000 OTPM) | Throttled max_tokens to 950 in `groq_service.py` to stay cleanly within API quotas |
+| **Analytics Crash 'Target not defined'** | Missing icon component reference inside `Analytics.jsx` | Replaced invalid icon element with standard Lucide React icon component |
+| **Exposed API Key Risk** | Direct frontend calling of LLM endpoint | Constructed server-side FastAPI proxy endpoint (`/api/ai/analyze`) storing secret in `.env` |
+| **Native Print Dialog Break** | `window.print()` rendered raw unstyled web pages | Replaced `window.print` with `html2pdf.js` library in `MonthlyReportModal.jsx` for clean PDF export |
+
+---
+
+## 19. PROJECT STORY
+
+Building EcoPilot stemmed from observing a widespread operational challenge on my college campus: while our institution frequently expressed commitment to environmental sustainability, actual utility consumption metrics, waste diversion records, and energy statistics were locked in separate physical files and department spreadsheets. There was no single, transparent system for students, faculty, or administrators to see how sustainable our campus actually was.
+
+When I began the **1M1B AI for Sustainability Virtual Internship**, I recognized an opportunity to apply Artificial Intelligence to solve this real campus problem. Rather than building a generic AI chatbot, I wanted to engineer a practical intelligence platform that could take real environmental metrics and generate evidence-grounded action plans.
+
+During development, my biggest technical challenge was ensuring AI output reliability. Early experiments with standalone LLMs often produced generic or hallucinated recommendations. Implementing a Retrieval-Augmented Generation (RAG) pipeline backed by `sentence-transformers` embeddings and a FAISS vector index significantly improved quality by grounding AI responses in verified sustainability baselines. Connecting this backend to Groq's high-speed inference running `qwen/qwen3.8-27b` and creating a responsive React dashboard transformed raw numbers into meaningful operational decision support. This solo project reinforced my conviction that AI is most powerful when connected to real-world environmental challenges.
+
+---
+
+## 20. INTERNSHIP LEARNING AND REFLECTION
+
+Participating in the **1M1B AI for Sustainability Virtual Internship** (in collaboration with the **AICTE National Internship Portal** and co-certified by **IBM SkillsBuild**) provided invaluable practical engineering experience.
+
+### What I Learned
+- **Applied AI for Sustainability:** Understanding how AI technologies can directly advance UN Sustainable Development Goal 12.
+- **RAG Vector Architecture:** Building end-to-end vector search pipelines using FAISS and `sentence-transformers` to eliminate LLM hallucinations.
+- **Secure API Integration:** Structuring server-side Python FastAPI proxies to enforce API key security and rate limiting.
+- **Full-Stack Development:** Designing modular React 18 single-page applications connected to cloud databases (Firebase Firestore).
+
+### What Challenged Me
+Managing API rate limits (1000 OTPM on Groq free tier) required careful prompt engineering and token throttling (max 950 tokens). Configuring CORS and server-side environment proxies taught me rigorous security practices.
+
+### How My Understanding Shifted
+I learned that effective AI applications rely far more on clean data processing, vector retrieval grounding, and intuitive UI design than simply using larger model parameters.
+
+---
+
+## 21. DISCUSSION AND LIMITATIONS
+
+- **Input Data Quality Dependency:** AI recommendations depend entirely on the accuracy of user-submitted assessment metrics.
+- **Hosted API & Network Dependence:** Requires continuous internet connectivity to reach Groq API inference servers.
+- **API Token Quotas:** Free-tier API inference requires token throttling (950 max tokens) to avoid 429 rate limit errors.
+- **Decision-Support Scope:** EcoPilot provides analytical decision support and does not replace on-site physical engineering audits.
+
+---
+
+## 22. FUTURE SCOPE
+
+- **IoT Hardware Telemetry:** Real-time automated data ingestion from smart electric meters, water flow sensors, and smart waste bins.
+- **Automated Carbon Accounting:** Standardized calculation models for Scope 1, Scope 2, and Scope 3 greenhouse gas emissions.
+- **Cross-Platform Mobile App:** Native mobile application for on-site facility inspections and barcode waste auditing.
+
+---
+
+## 23. CONCLUSION
+
+EcoPilot successfully demonstrates the integration of Artificial Intelligence, RAG vector retrieval, and cloud-native service design into a complete campus sustainability intelligence platform. By isolating API credentials behind a Python FastAPI proxy, anchoring LLM inference in FAISS vector evidence, and rendering actionable visual metrics in React, the project achieves a secure, maintainable, and impactful architecture. The project outcomes directly satisfy the learning goals of the 1M1B AI for Sustainability Virtual Internship 2026, advancing practical technology solutions for UN Sustainable Development Goal 12.
+
+---
+
+## 24. PROJECT SUBMISSION PLACEHOLDERS
+
+### 24.1 GitHub Repository Link
+https://github.com/thamizharasanm2528-byte/Eco-Pilot-
+
+### 24.2 Live Prototype Link
+> **[PASTE LIVE PROJECT URL HERE]**
+
+### 24.3 Demo Video Link
+> **[PASTE DEMO VIDEO LINK HERE]**
+
+### 24.4 Screenshot Placeholders
+
+> **FIGURE 1 — EcoPilot Landing Page**  
+> [INSERT SCREENSHOT HERE]
+
+> **FIGURE 2 — User Dashboard & Sustainability Score Overview**  
+> [INSERT SCREENSHOT HERE]
+
+> **FIGURE 3 — Multi-Category Assessment Data Entry & Import**  
+> [INSERT SCREENSHOT HERE]
+
+> **FIGURE 4 — Analytics Dashboard & Hotspot Visualizations**  
+> [INSERT SCREENSHOT HERE]
+
+> **FIGURE 5 — Knowledge Base & Reference Standards**  
+> [INSERT SCREENSHOT HERE]
+
+> **FIGURE 6 — AI Intelligence Generator & Executive Summary**  
+> [INSERT SCREENSHOT HERE]
+
+> **FIGURE 7 — Grounded Recommendations & Multi-Phase Action Plan**  
+> [INSERT SCREENSHOT HERE]
+
+---
+
+## 25. REFERENCES
+
+1. **United Nations Sustainable Development Goals:** Goal 12: Responsible Consumption and Production. [https://sdgs.un.org/goals/goal12](https://sdgs.un.org/goals/goal12)
+2. **Groq API Documentation:** Groq Developer Console & Fast Inference Engine. [https://console.groq.com/docs](https://console.groq.com/docs)
+3. **Qwen Model Specifications:** Qwen Open-Weights LLM Technical Specs. [https://huggingface.co/Qwen](https://huggingface.co/Qwen)
+4. **Lewis et al.:** Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. Advances in Neural Information Processing Systems (NeurIPS).
+5. **FAISS Vector Search Engine:** Facebook AI Similarity Search Documentation. [https://github.com/facebookresearch/faiss](https://github.com/facebookresearch/faiss)
+6. **Sentence-Transformers Documentation:** Multilingual & Dense Text Embeddings (`all-MiniLM-L6-v2`). [https://www.sbert.net/](https://www.sbert.net/)
+7. **FastAPI Framework Documentation:** Asynchronous Python API Framework. [https://fastapi.tiangolo.com/](https://fastapi.tiangolo.com/)
+8. **Firebase Services Documentation:** Firestore & Authentication Web SDK. [https://firebase.google.com/docs](https://firebase.google.com/docs)
+9. **IBM SkillsBuild & AICTE:** Academic Internship Programme Overview 2026.
+
+---
+
+## 26. APPENDICES
+
+### Appendix A — System Directory Structure
+```text
+EcoPilot/
+├── backend/
+│   ├── main.py                  # FastAPI REST server & routing
+│   ├── ai/
+│   │   ├── config.py            # Groq model config (qwen/qwen3.8-27b)
+│   │   └── groq_service.py      # LLM API client & token throttling
+│   └── rag/
+│       ├── vector_store.py      # FAISS vector store management
+│       └── ingestion.py         # Knowledge embedding & indexing
+├── public/
+│   ├── logo.png                 # Official EcoPilot brand emblem
+│   └── favicon.png              # Browser tab icon
+├── src/
+│   ├── components/              # Navbar, Sidebar, Footer, MonthlyReportModal
+│   ├── pages/                   # Dashboard, Assessments, Analytics, AIIntelligence
+│   ├── services/                # aiApi.js, assessmentService.js
+│   └── utils/                   # export/formatters.js, pdfExporter
+├── .env                         # Server-side secrets (GROQ_API_KEY)
+└── package.json                 # React dependencies & scripts
+```
+
+### Appendix B — Firestore Data Schemas
+```json
+// assessments collection document schema
+{
+  "id": "auto-generated-id",
+  "userId": "firebase-user-uid",
+  "overallScore": 78.5,
+  "overallGrade": "B+",
+  "categories": {
+    "energy": { "score": 72, "consumptionKwh": 125000, "solarPercentage": 15 },
+    "water": { "score": 85, "consumptionLiters": 450000 },
+    "waste": { "score": 64, "recyclingRate": 35 },
+    "transportation": { "score": 80, "evChargingStations": 12 },
+    "food": { "score": 91, "localFoodPercentage": 40 }
+  },
+  "timestamp": "2026-09-01T14:20:00Z"
+}
+```
+
+### Appendix C — Sample Firestore Security Rules
 ```javascript
 rules_version = '2';
 service cloud.firestore {
@@ -451,301 +531,14 @@ service cloud.firestore {
 }
 ```
 
-### 15.3 API Key Isolation & Backend Proxying
-The `GROQ_API_KEY` is strictly managed as a server-side environment variable inside the Python/FastAPI environment.
-
-```
-[ FRONTEND ] ──(No API Key Exposed)──► [ FASTAPI BACKEND ] ──(GROQ_API_KEY)──► [ GROQ API ]
-```
-
-- **Frontend Isolation:** Client-side React bundles contain **zero** Groq API keys or private service credentials.
-- **Proxy Enforcement:** Frontend components invoke backend API endpoints (`POST /api/ai/analyze`), which execute authenticated server-to-server calls to Groq.
-
-### 15.4 Environment Configuration
-Server-side `.env` configuration file structure:
-```bash
-# Backend Environment Configuration
-GROQ_API_KEY=gsk_server_side_secret_key_here
-GROQ_MODEL=qwen/qwen3.8-27b
-FASTAPI_HOST=127.0.0.1
-FASTAPI_PORT=8000
-```
-
----
-
-## 16. RESPONSIBLE AI
-
-EcoPilot strictly adheres to Responsible AI principles:
-
-1. **Evidence Grounding:** Recommendations are validated against retrieved domain evidence to minimize LLM hallucinations.
-2. **Human-in-the-Loop Governance:** AI outputs are designed as decision-support insights for human facility managers, not autonomous operational commands.
-3. **No Unsubstantiated Claims:** The system avoids claiming absolute environmental statistics (e.g., claiming exact metric carbon offsets) unless backed by empirical input data.
-4. **Data Privacy & Protection:** Assessment inputs sent to the Groq API contain institutional environmental metrics, avoiding personal user identification data.
-5. **Prompt Injection Safeguards:** Input parameters undergo structural validation and sanitization prior to prompt embedding.
-
----
-
-## 17. AI OUTPUT STRUCTURE
-
-When an AI intelligence analysis is completed, the system returns a validated structured output object:
-
-```json
-{
-  "executiveSummary": "String providing high-level overview of campus sustainability performance.",
-  "keyFindings": [
-    {
-      "category": "Energy",
-      "severity": "High",
-      "observation": "HVAC usage spike detected during off-peak hours."
-    }
-  ],
-  "recommendations": [
-    {
-      "id": 1,
-      "title": "Install Automated Smart Thermostats",
-      "category": "Energy",
-      "priority": "High",
-      "expectedImpact": "Estimated 12-15% reduction in off-peak electrical load.",
-      "evidenceReference": "Campus Energy Management Baseline Standards, Sec 4.2"
-    }
-  ],
-  "actionPlan": {
-    "shortTerm": ["Conduct building HVAC audit within 30 days."],
-    "mediumTerm": ["Procure smart sensor infrastructure within 90 days."],
-    "longTerm": ["Integrate campus-wide microgrid management over 12 months."]
-  }
-}
-```
-
----
-
-## 18. USER EXPERIENCE
-
-EcoPilot prioritizes clear visual hierarchy and readable data layout:
-- **Clean Aesthetic:** Designed with a curated green/emerald color palette (#10B981, #059669, #0F172A) tailored for sustainability platforms.
-- **Readable Data Formatting:** Numerical metrics, assessment dates, and raw scores are rendered with human-readable summary formatters.
-- **Responsive Layout:** Expanded max-width layout (`max-w-[1550px]`) ensuring multi-column charts and tables render clearly on desktop screens.
-- **Feedback & Loading States:** Clear visual indicators, animated spinners, and error boundary elements prevent layout breaks during async operations.
-
----
-
-## 19. EXPECTED IMPACT
-
-### Environmental Impact
-- **Resource Conservation:** Facilitates tracking and reduction of electricity, water, and fuel usage.
-- **Landfill Diversion:** Encourages institutional waste diversion through structured recycling and composting tracking.
-
-### Institutional & Operational Impact
-- **Centralized Oversight:** Eliminates fragmented paper and spreadsheet records.
-- **Evidence-Based Budgeting:** Empowers administrators to allocate capital to verified sustainability hotspots.
-
-### Educational & Academic Impact
-- **Demonstrating Applied AI:** Serves as a practical reference implementation for combining AI and sustainability.
-- **Fostering Campus Awareness:** Engages students and faculty in institutional carbon footprint reduction.
-
----
-
-## 20. LIMITATIONS
-
-1. **Dependency on Input Quality:** AI recommendations depend on the accuracy and completeness of user-submitted assessment data.
-2. **Probabilistic Nature of LLMs:** While grounded via RAG, language model outputs require human verification before major capital deployment.
-3. **Hosted API Dependency:** Requires continuous internet connectivity to communicate with the Groq API.
-4. **Rate Limit Bounds:** Free-tier API inference requires token management (e.g., max token caps) to avoid rate limits.
-5. **Decision-Support Scope:** EcoPilot provides analytical decision support and does not replace on-site physical engineering audits.
-
----
-
-## 21. FUTURE SCOPE
-
-- **IoT Sensor Integration:** Real-time data collection via smart energy meters, water flow sensors, and smart waste bins.
-- **Predictive Analytics & Forecasting:** Time-series forecasting for seasonal utility consumption and cost predictions.
-- **Multi-Campus Governance:** Enterprise administration controls for multi-building or multi-campus university systems.
-- **Mobile Application:** Native iOS/Android app for field facility inspections and mobile data entry.
-- **Automated Carbon Accounting:** Scope 1, 2, and 3 carbon footprint calculation standardizations.
-
----
-
-## 22. PROJECT DEVELOPMENT APPROACH
-
-The development of EcoPilot followed an iterative engineering workflow:
-
-```
-[ Problem Definition & Requirement Analysis ]
-                       │
-                       ▼
-[ UI/UX Design & Architecture Planning ]
-                       │
-                       ▼
-[ Authentication & Firestore Integration ]
-                       │
-                       ▼
-[ Data Entry, Import/Export & Analytics Engine ]
-                       │
-                       ▼
-[ FAISS Vector RAG & Knowledge Pipeline ]
-                       │
-                       ▼
-[ Groq API (qwen/qwen3.8-27b) AI Integration ]
-                       │
-                       ▼
-[ End-to-End Testing, Security & UI Polish ]
-```
-
----
-
-## 23. TESTING AND VALIDATION
-
-Testing was performed across critical system modules:
-
-### 1. Authentication & Security Testing
-- **Test:** Registration, login, invalid credentials handling, and protected route access.
-- **Result:** [PASS — Firebase Auth enforced; unauthorized page access blocked]
-
-### 2. Assessment Data & Import/Export Testing
-- **Test:** Data entry validation, CSV/Excel parsing, PDF report generation (`html2pdf.js`).
-- **Result:** [PASS — Data successfully normalized, stored, and exported]
-
-### 3. Analytics & Hotspot Detection Testing
-- **Test:** Accuracy of score calculations, category weighting, and hotspot triggering algorithms.
-- **Result:** [PASS — Recharts components accurately mirror underlying Firestore datasets]
-
-### 4. AI & RAG Pipeline Testing
-- **Test:** FAISS vector retrieval relevance, Groq API request formatting, token limit handling, and JSON schema validation.
-- **Result:** [PASS — `qwen/qwen3.8-27b` returns structured analysis within ~1.8 seconds]
-
----
-
-## 24. PROJECT STORY
-
-### Authentic Student Perspective
-
-Building **EcoPilot** stemmed from observing a common issue on our college campus: while our institution frequently expressed commitment to environmental sustainability, actual utility consumption data, waste records, and energy statistics were locked in separate physical files and department spreadsheets. There was no simple, unified system for students, faculty, or administrators to see how sustainable our campus actually was.
-
-When the **1M1B AI for Sustainability Virtual Internship** started, I realized this was an opportunity to apply Artificial Intelligence to solve a real campus challenge. Rather than building a generic AI chatbot, I wanted to create a practical intelligence platform that could take real environmental metrics and generate evidence-grounded action plans.
-
-During development, the biggest technical challenge was ensuring AI reliability. Early experiments with standalone LLMs often produced generic or unrealistic recommendations. Implementing a Retrieval-Augmented Generation (RAG) pipeline backed by `sentence-transformers` and a FAISS vector index significantly improved output quality by grounding AI responses in verified sustainability standards. Connecting this backend to Groq's high-speed inference running `qwen/qwen3.8-27b` and creating a responsive React dashboard transformed raw numbers into meaningful operational intelligence.
-
-This project helped me realize that AI is most powerful when paired with domain knowledge and focused on solving real-world sustainability challenges.
-
----
-
-## 25. INTERNSHIP LEARNING AND REFLECTION
-
-### 1M1B AI for Sustainability Virtual Internship Reflection
-
-Participating in the **1M1B AI for Sustainability Virtual Internship** (in collaboration with the **AICTE National Internship Portal** and co-certified by **IBM SkillsBuild**) provided valuable hands-on technical and problem-solving experience.
-
-#### Key Learning Takeaways:
-- **Applied AI for Environmental Impact:** Understanding how AI tools can be harnessed to solve UN Sustainable Development Goals (specifically SDG 12).
-- **RAG Architecture & Vector Search:** Gained practical experience building retrieval pipelines using FAISS vector indexing and embedding models to prevent LLM hallucinations.
-- **LLM API Integration:** Mastered server-side API integration using FastAPI, Groq inference engines, and structured JSON prompt engineering.
-- **Full-Stack Engineering:** Developed skills in building responsive React 18 single-page applications connected to Python FastAPI backends and Firebase cloud databases.
-- **Responsible AI Principles:** Learned the importance of data privacy, server-side API key protection, and human-in-the-loop AI governance.
-
-#### Reflection Summary:
-- **What challenged me:** Managing API rate limits, implementing secure server-side proxying for LLM keys, and configuring token thresholds for free-tier inference.
-- **How my understanding shifted:** I learned that effective AI solutions rely heavily on structured data preparation, vector retrieval grounding, and user-centered interface design, rather than just large model parameter counts.
-- **How EcoPilot demonstrates my learning:** EcoPilot directly translates these lessons into a working campus sustainability intelligence platform.
-
----
-
-## 26. GITHUB REPOSITORY
-
-### PROJECT REPOSITORY
-**GitHub Link:**  
-https://github.com/thamizharasanm2528-byte/Eco-Pilot-
-
----
-
-## 27. LIVE PROTOTYPE
-
-### LIVE DEMO LINK
-[PASTE LIVE PROJECT URL HERE]
-
----
-
-## 28. DEMO VIDEO
-
-### DEMO VIDEO LINK
-[PASTE DEMO VIDEO LINK HERE]
-
----
-
-## 29. SCREENSHOT PLACEHOLDERS
-
-#### FIGURE 1 — EcoPilot Landing Page
-[INSERT SCREENSHOT HERE]
-
-#### FIGURE 2 — User Dashboard Overview
-[INSERT SCREENSHOT HERE]
-
-#### FIGURE 3 — Sustainability Assessment Data Entry
-[INSERT SCREENSHOT HERE]
-
-#### FIGURE 4 — Analytics & Hotspot Visualizations
-[INSERT SCREENSHOT HERE]
-
-#### FIGURE 5 — Sustainability Knowledge Base
-[INSERT SCREENSHOT HERE]
-
-#### FIGURE 6 — AI Intelligence Generator & Executive Summary
-[INSERT SCREENSHOT HERE]
-
-#### FIGURE 7 — Grounded Recommendations & Multi-Phase Action Plan
-[INSERT SCREENSHOT HERE]
-
----
-
-## 30. PROJECT OUTCOMES
-
-1. **Working Intelligence Platform:** Delivered a functional campus sustainability platform connecting React 18, FastAPI, Firebase, and Groq AI.
-2. **Centralized Assessment Framework:** Standardized environmental metrics tracking across Energy, Water, Waste, Transit, and Food.
-3. **Grounded AI Analysis:** Implemented RAG-augmented inference using `qwen/qwen3.8-27b` to generate evidence-backed recommendations.
-4. **Data Portability:** Enabled CSV/Excel data import and PDF report generation (`html2pdf.js`).
-5. **Secure Architecture:** Implemented server-side API key proxying, Firebase identity authentication, and Firestore security rules.
-
----
-
-## 31. CONCLUSION
-
-EcoPilot demonstrates how modern Artificial Intelligence and Retrieval-Augmented Generation can be applied to institutional sustainability management. By integrating multi-category assessment tracking, vector search retrieval, and Groq-powered LLM inference into a unified platform, EcoPilot helps educational institutions move from manual data collection to evidence-based sustainability governance. In alignment with UN SDG 12 (Responsible Consumption and Production), EcoPilot provides a practical model for how technology can support sustainable campus operations.
-
----
-
-## 32. FINAL SUBMISSION CHECKLIST
-
-- [x] Problem statement clearly defined
-- [x] Detailed solution description provided
-- [x] Primary SDG 12 & Supporting SDGs (6, 7, 11) documented
-- [x] AI elements and Groq API documented
-- [x] Active LLM model (`qwen/qwen3.8-27b`) documented
-- [x] RAG architecture and FAISS retrieval workflow explained
-- [x] Complete technology stack documented
-- [x] Data/AI workflow explained
-- [x] Security considerations (server-side API key isolation) documented
-- [x] Responsible AI guidelines documented
-- [x] Expected impact explained realistically
-- [x] System limitations documented professionally
-- [x] Future scope outlined
-- [x] Project story completed from authentic student perspective
-- [x] 1M1B internship reflection completed
-- [x] GitHub repository link included (https://github.com/thamizharasanm2528-byte/Eco-Pilot-)
-- [ ] Live prototype link inserted manually
-- [ ] Demo video link inserted manually
-- [ ] Screenshots inserted into designated placeholders
-- [x] Final project tested and verified
-- [x] No API keys or secret credentials included
-
----
-
-## 33. REFERENCES
-
-1. **United Nations Sustainable Development Goals:** Goal 12 — Responsible Consumption and Production. [https://sdgs.un.org/goals/goal12](https://sdgs.un.org/goals/goal12)
-2. **Groq API Documentation:** Groq Developer Cloud & Fast Inference Engine Docs. [https://console.groq.com/docs](https://console.groq.com/docs)
-3. **Qwen Model Documentation:** Qwen Open-Weights Language Model Technical Specifications. [https://huggingface.co/Qwen](https://huggingface.co/Qwen)
-4. **Retrieval-Augmented Generation (RAG):** Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks," NeurIPS.
-5. **FAISS (Facebook AI Similarity Search):** Dense Vector Clustering and Search Library Documentation. [https://github.com/facebookresearch/faiss](https://github.com/facebookresearch/faiss)
-6. **Sentence-Transformers:** Multilingual & Dense Text Embeddings Documentation (`all-MiniLM-L6-v2`). [https://www.sbert.net/](https://www.sbert.net/)
-7. **FastAPI Documentation:** Modern, Fast Web Framework for Python. [https://fastapi.tiangolo.com/](https://fastapi.tiangolo.com/)
-8. **Firebase Documentation:** Firestore & Authentication Web Developer Guides. [https://firebase.google.com/docs](https://firebase.google.com/docs)
-9. **React 18 & Vite Documentation:** Building Modern Frontend Web Applications. [https://react.dev/](https://react.dev/)
+### Appendix D — Final Internship Submission Checklist
+- [x] **Problem Statement:** Clearly defined & highlighted with operational challenges.
+- [x] **System Features:** 8 core features documented in dedicated section.
+- [x] **RAG & AI Architecture:** FAISS retrieval and Groq (`qwen/qwen3.8-27b`) documented.
+- [x] **Testing & Validation:** Complete testing criteria matrix documented.
+- [x] **Project Story:** Authentic personal student story written in 1st person.
+- [x] **Internship Reflection:** 1M1B, AICTE, and IBM SkillsBuild learning reflection included.
+- [x] **GitHub Repository:** Repository link included (`https://github.com/thamizharasanm2528-byte/Eco-Pilot-`).
+- [ ] **Live Prototype Link:** Placeholder included for manual link pasting.
+- [ ] **Demo Video Link:** Placeholder included for manual video link pasting.
+- [ ] **Screenshots:** Figures 1-7 placeholders included for manual image pasting.
