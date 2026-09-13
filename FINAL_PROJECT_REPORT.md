@@ -18,14 +18,11 @@ AICTE National Internship Portal
 **Co-certified by:**  
 IBM SkillsBuild
 
-**Student Name:**  
-[YOUR NAME]
+**Student:**  
+THAMIZHARASAN M
 
 **Institution:**  
-[YOUR COLLEGE NAME]
-
-**Department:**  
-[YOUR DEPARTMENT]
+RAJALAKSHMI ENGINEERING COLLEGE
 
 **Academic Year:**  
 2026
